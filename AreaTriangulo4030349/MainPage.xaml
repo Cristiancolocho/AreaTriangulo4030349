@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AreaTriangulo4030349.View"
+             xmlns:converters="clr-namespace:AreaTriangulo4030349.Converters"
+             x:Class="AreaTriangulo4030349.MainPage">
+
+    <!--Para que no apareciera ceros en los entrys y  en el label cree una clase NullToStringConverter--> 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Register the NullToStringConverter in the resources -->
+            <converters:NullToStringConverter x:Key="NullToStringConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <local:TrianguloView/>
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <StackLayout  Spacing="20"  Padding="20">
+
+            <Image
+                Source="triangulo.jpg" 
+                HeightRequest="185"
+                Aspect="AspectFit"
+                 />
+
+
+            <Label Text="Lado A:" />
+            <Entry Text="{Binding LadoA, Mode=TwoWay}" Keyboard="Numeric" />
+
+            <Label Text="Lado B:" />
+            <Entry Text="{Binding LadoB, Mode=TwoWay}" Keyboard="Numeric" />
+
+            <Label Text="Lado C:" />
+            <Entry Text="{Binding LadoC, Mode=TwoWay}" Keyboard="Numeric" />
+
+            <Button Text="Calcular Área" Command="{Binding CalcularAreaCommand}" />
+
+            <Label Text="Área del triángulo:" />
+            <Label Text="{Binding Area, StringFormat='{0:F2}'}" />
+            
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

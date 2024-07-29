@@ -5,7 +5,7 @@
              xmlns:converters="clr-namespace:AreaTriangulo4030349.Converters"
              x:Class="AreaTriangulo4030349.MainPage">
 
-    <!--Para que no apareciera ceros en los entrys y  en el label cree una clase NullToStringConverter--> 
+    <!--Para que no se aacepten valores nulos cree una clase NullToStringConverter ( para probar codigo)--> 
     <ContentPage.Resources>
         <ResourceDictionary>
             <!-- Register the NullToStringConverter in the resources -->
